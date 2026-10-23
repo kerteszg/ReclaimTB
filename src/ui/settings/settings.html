@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Scheduling Companion — Settings</title>
+    <link rel="stylesheet" href="../shared/styles.css" />
+  </head>
+  <body>
+    <div class="settings-page">
+      <h1>Scheduling Companion — Settings</h1>
+      <p class="muted">
+        Google Calendar and Reclaim work independently. Mail Brain is optional and not required.
+      </p>
+
+      <section class="card">
+        <h2>Google Calendar</h2>
+        <div class="stack">
+          <label for="googleClientId">OAuth Client ID</label>
+          <input id="googleClientId" type="text" autocomplete="off" />
+        </div>
+        <div class="stack">
+          <label for="googleClientSecret">OAuth Client Secret (optional)</label>
+          <input id="googleClientSecret" type="password" autocomplete="off" />
+        </div>
+        <p id="googleRedirect" class="muted"></p>
+        <div class="row">
+          <label>
+            <input id="blockByDefault" type="checkbox" checked />
+            New events block my time by default
+          </label>
+        </div>
+        <div class="stack">
+          <label for="calendarSelect">Destination calendar</label>
+          <select id="calendarSelect" disabled>
+            <option value="">Connect Google first</option>
+          </select>
+        </div>
+        <div class="row">
+          <button type="button" class="primary" id="googleConnect">Connect</button>
+          <button type="button" id="googleTest">Test connection</button>
+          <button type="button" class="danger" id="googleDisconnect">Disconnect</button>
+        </div>
+        <p id="googleStatus" class="muted"></p>
+        <p id="googleError" class="status err" hidden></p>
+      </section>
+
+      <section class="card">
+        <h2>Reclaim</h2>
+        <div class="stack">
+          <label for="reclaimApiKey">API key</label>
+          <input id="reclaimApiKey" type="password" autocomplete="off" />
+        </div>
+        <div class="stack">
+          <label for="defaultPriority">Default task priority</label>
+          <select id="defaultPriority">
+            <option value="P1">P1 — Critical</option>
+            <option value="P2" selected>P2 — High</option>
+            <option value="P3">P3 — Medium</option>
+            <option value="P4">P4 — Low</option>
+          </select>
+        </div>
+        <div class="stack">
+          <label for="defaultDuration">Default estimated duration (minutes)</label>
+          <input id="defaultDuration" type="number" min="15" step="15" value="30" />
+        </div>
+        <div class="row">
+          <button type="button" class="primary" id="reclaimSave">Save</button>
+          <button type="button" id="reclaimTest">Test connection</button>
+          <button type="button" class="danger" id="reclaimDisconnect">Disconnect</button>
+        </div>
+        <p id="reclaimStatus" class="muted"></p>
+        <p id="reclaimError" class="status err" hidden></p>
+      </section>
+
+      <section class="card">
+        <h2>Mail Brain (optional, Phase 2)</h2>
+        <div class="row">
+          <label>
+            <input id="mbEnabled" type="checkbox" />
+            Enable suggestions
+          </label>
+        </div>
+        <div class="stack">
+          <label for="mbUrl">Server URL</label>
+          <input id="mbUrl" type="url" placeholder="https://mailbrain.local" />
+        </div>
+        <div class="stack">
+          <label for="mbToken">Auth token</label>
+          <input id="mbToken" type="password" autocomplete="off" />
+        </div>
+        <div class="row">
+          <label>
+            <input id="mbAnalyzeOnOpen" type="checkbox" />
+            Analyze emails when opened
+          </label>
+        </div>
+        <div class="row">
+          <label>
+            <input id="mbHighlight" type="checkbox" checked />
+            Highlight detected events and tasks
+          </label>
+        </div>
+        <div class="row">
+          <button type="button" class="primary" id="mbSave">Save</button>
+        </div>
+        <p class="muted">
+          Analysis API is documented in docs/mailbrain-api.md. The extension works fully without
+          Mail Brain.
+        </p>
+      </section>
+
+      <div class="actions">
+        <button type="button" class="primary" id="saveAll">Save all settings</button>
+      </div>
+      <p id="saveMsg" class="muted"></p>
+    </div>
+    <script src="settings.js"></script>
+  </body>
+</html>

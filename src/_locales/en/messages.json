@@ -1,0 +1,11 @@
+{
+  "extensionName": {
+    "message": "Scheduling Companion"
+  },
+  "extensionDescription": {
+    "message": "Create Google Calendar events and Reclaim tasks from the email you are reading."
+  },
+  "actionTitle": {
+    "message": "Schedule from email"
+  }
+}

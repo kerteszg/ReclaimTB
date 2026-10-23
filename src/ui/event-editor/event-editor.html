@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>New calendar event</title>
+    <link rel="stylesheet" href="../shared/styles.css" />
+  </head>
+  <body>
+    <div class="settings-page">
+      <h1>New Google Calendar event</h1>
+      <p id="source" class="muted"></p>
+      <div id="alert" class="status" hidden></div>
+
+      <div class="card">
+        <div class="stack">
+          <label for="title">Title</label>
+          <input id="title" type="text" required />
+        </div>
+        <div class="stack">
+          <label for="location">Location</label>
+          <input id="location" type="text" />
+        </div>
+        <div class="row">
+          <label><input id="allDay" type="checkbox" /> All-day</label>
+          <label><input id="blocking" type="checkbox" checked /> Blocking (Busy)</label>
+        </div>
+        <div class="stack" id="start-datetime-wrap">
+          <label for="start">Start</label>
+          <input id="start" type="datetime-local" required />
+        </div>
+        <div class="stack" id="end-datetime-wrap">
+          <label for="end">End</label>
+          <input id="end" type="datetime-local" required />
+        </div>
+        <div class="stack" id="start-date-wrap" hidden>
+          <label for="startDate">Date</label>
+          <input id="startDate" type="date" />
+        </div>
+
+        <details class="advanced">
+          <summary>Advanced</summary>
+          <div class="stack">
+            <label for="description">Description</label>
+            <textarea id="description"></textarea>
+          </div>
+          <div class="stack">
+            <label for="visibility">Visibility</label>
+            <select id="visibility">
+              <option value="default">Default</option>
+              <option value="public">Public</option>
+              <option value="private">Private</option>
+            </select>
+          </div>
+        </details>
+      </div>
+
+      <div class="actions">
+        <button type="button" id="btn-cancel">Cancel</button>
+        <button type="button" class="primary" id="btn-save">Create event</button>
+      </div>
+      <p id="calendar-info" class="muted"></p>
+    </div>
+    <script src="event-editor.js"></script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+  "name": "__MSG_extensionName__",
+  "description": "__MSG_extensionDescription__",
+  "version": "0.1.0",
+  "default_locale": "en",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "scheduling-companion@reclaimtb.local",
+      "strict_min_version": "128.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "message_display_action": {
+    "default_title": "__MSG_actionTitle__",
+    "default_popup": "ui/popup/popup.html"
+  },
+  "options_ui": {
+    "page": "ui/settings/settings.html",
+    "open_in_tab": true
+  },
+  "permissions": [
+    "messagesRead",
+    "storage",
+    "identity",
+    "notifications",
+    "https://www.googleapis.com/*",
+    "https://oauth2.googleapis.com/*",
+    "https://accounts.google.com/*",
+    "https://api.app.reclaim.ai/*"
+  ],
+  "optional_permissions": ["<all_urls>"],
+  "web_accessible_resources": [
+    "ui/event-editor/event-editor.html",
+    "ui/task-editor/task-editor.html"
+  ]
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>New Reclaim task</title>
+    <link rel="stylesheet" href="../shared/styles.css" />
+  </head>
+  <body>
+    <div class="settings-page">
+      <h1>New Reclaim task</h1>
+      <p id="source" class="muted"></p>
+      <div id="alert" class="status" hidden></div>
+
+      <div class="card">
+        <div class="stack">
+          <label for="title">Title</label>
+          <input id="title" type="text" required />
+        </div>
+        <div class="stack">
+          <label for="priority">Priority</label>
+          <select id="priority">
+            <option value="P1">P1 — Critical</option>
+            <option value="P2" selected>P2 — High</option>
+            <option value="P3">P3 — Medium</option>
+            <option value="P4">P4 — Low</option>
+          </select>
+        </div>
+        <div class="stack">
+          <label for="duration">Estimated duration (minutes)</label>
+          <input id="duration" type="number" min="15" step="15" value="30" />
+        </div>
+        <div class="stack">
+          <label for="due">Due date</label>
+          <input id="due" type="date" />
+        </div>
+
+        <details class="advanced">
+          <summary>Advanced</summary>
+          <div class="stack">
+            <label for="start">Start date</label>
+            <input id="start" type="date" />
+          </div>
+          <div class="stack">
+            <label for="notes">Notes</label>
+            <textarea id="notes"></textarea>
+          </div>
+        </details>
+      </div>
+
+      <div class="actions">
+        <button type="button" id="btn-cancel">Cancel</button>
+        <button type="button" class="primary" id="btn-save">Create task</button>
+      </div>
+    </div>
+    <script src="task-editor.js"></script>
+  </body>
+</html>

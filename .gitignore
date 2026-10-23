@@ -1,0 +1,67 @@
+# Build / dependencies
+node_modules/
+dist/
+web-ext-artifacts/
+*.xpi
+*.zip
+coverage/
+*.tsbuildinfo
+*.log
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Secrets / private credentials
+.env
+.env.*
+!.env.example
+*.local.json
+*.local.*
+secrets/
+credentials*
+client_secret*.json
+token*.json
+scripts/feasibility/output/
+*.pem
+*.key
+
+# Personal data / real email fixtures
+fixtures/private/
+*.eml
+*.mbox
+tests/fixtures/real/
+
+# AI artefacts
+.cursor/
+.claude/
+.codex/
+.aider*
+.continue/
+.copilot/
+.windsurf*
+.gemini/
+CLAUDE.md
+AGENTS.md
+GEMINI.md
+*.plan.md
+.agent-transcripts/
+chat-exports/
+*.chat.md
+
+# Editors / OS / Dropbox
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+.dropbox
+.dropbox.attr
+.dropbox.cache/
+*conflicted copy*
+
+# Thunderbird dev profiles
+.tb-profile/
+profile/

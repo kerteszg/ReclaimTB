@@ -1,0 +1,27 @@
+{
+  "name": "reclaimtb",
+  "version": "0.1.0",
+  "description": "Thunderbird Scheduling Companion — create Google Calendar events and Reclaim tasks from email",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "watch": "node build.mjs --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint:ext": "npm run build && web-ext lint -s dist",
+    "run:tb": "npm run build && web-ext run -s dist --firefox=thunderbird",
+    "feasibility:reclaim": "node scripts/feasibility/reclaim-create-task.mjs",
+    "feasibility:google": "node scripts/feasibility/google-list-calendars.mjs"
+  },
+  "devDependencies": {
+    "@types/thunderbird-webext-browser": "^127.0.0",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.0.0",
+    "web-ext": "^8.4.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
